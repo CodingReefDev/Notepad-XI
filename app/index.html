@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,200,0,200" />
+  <link href="./assets/latoGFonts.css" rel="stylesheet">
+  <link href="./index.css" rel="stylesheet">
+  <title>Notepad XI</title>
+</head>
+
+<body>
+  <img src="" class="background" style="width: 100%; height: 100%;" alt="">
+  <div class="main">
+    <div class="titlebar">
+      <div class="left">
+        <img src="./assets/logo_192.png" alt="" class="icon">
+        <p class="title">Notepad XI</p>
+      </div>
+      <div class="right"></div>
+    </div>
+    <div class="tabsbar">
+      <div class="fixedActions">
+        <div class="action" id="openTab">
+          <span class="material-symbols-rounded">
+            folder_open
+          </span>
+        </div>
+        <div class="action highlight" id="recentTab">
+          <span class="material-symbols-rounded">
+            history
+          </span>
+        </div>
+      </div>
+      <div class="tabsHolder">
+        <div class="content"></div>
+
+        <div class="action" id="addTab">
+          <span class="material-symbols-rounded">
+            add
+          </span>
+        </div>
+      </div>
+      <div class="others" id="settingTab">
+        <span class="material-symbols-rounded">
+          settings
+        </span>
+      </div>
+    </div>
+    <div class="editors" style="display: none; opacity: 0">
+    </div>
+    <div class="recents">
+      <h3 class="title">Your Recents</h3>
+      <div class="content">
+        <div class="left">
+        </div>
+        <div class="right">
+          <p>You can turn off recents in <a href="#" id="openSettings">Settings</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="settings" style="display: none; opacity: 0;">
+      <h3 class="title">Settings</h3>
+      <div class="content">
+        <div class="left">
+          <div class="item">
+            <div class="shown">
+              <div class="l">
+                <span class="material-symbols-rounded">
+                  contrast
+                </span>
+                <div class="text">
+                  <p class="top">App Theme</p>
+                  <p class="bottom">Select which app theme to display</p>
+                </div>
+              </div>
+              <div class="r">
+                <span class="material-symbols-rounded " id="open">
+                  chevron_right
+                </span>
+              </div>
+            </div>
+            <div class="hiddenOpt">
+              <div class="option" id="systemmode">
+                <div class="radio selected">
+                  <div class="color"></div>
+                </div>
+                <p>Use System Settings</p>
+              </div>
+              <div class="option" id="whitemode">
+                <div class="radio">
+                  <div class="color"></div>
+                </div>
+                <p>White Mode</p>
+              </div>
+              <div class="option" id="darkmode">
+                <div class="radio">
+                  <div class="color"></div>
+                </div>
+                <p>Dark Mode</p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="shown">
+              <div class="l">
+                <span class="material-symbols-rounded">
+                  format_size
+                </span>
+                <div class="text">
+                  <p class="top">Fonts</p>
+                  <p class="bottom">Change font styling</p>
+                </div>
+              </div>
+              <div class="r">
+                <span class="material-symbols-rounded " id="open">
+                  chevron_right
+                </span>
+              </div>
+            </div>
+            <div class="hiddenDrps">
+              <div class="option">
+                <p>Family</p>
+                <div class="select">
+
+                  <button class="current" id="fontFamilyCurrent">
+                    <p>Roboto (Google Fonts)</p>
+                    <span class="material-symbols-rounded">
+                      expand_more
+                    </span>
+                  </button>
+                  <div class="options" id="fontFamilies">
+                    <div>
+                      <div class="active"></div>
+                      <p style="font-family: 'Roboto', sans-serif;">Roboto (Google Fonts)</p>
+                    </div>
+
+                    <div>
+                      <div class="active"></div>
+                      <p style="font-family: 'Courier New', Courier, monospace;">Courier New</p>
+                    </div>
+
+                    <div>
+                      <div class="active"></div>
+                      <p style="font-family: cursive;">cursive</p>
+                    </div>
+
+                    <div>
+                      <div class="active"></div>
+                      <p style="font-family: sans-serif;">sans-serif</p>
+                    </div>
+
+                    <div>
+                      <div class="active"></div>
+                      <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Segoe UI</p>
+                    </div>
+
+                    <div>
+                      <div class="active"></div>
+                      <p
+                        style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                        Lucida Sans</p>
+                    </div>
+
+                    <div>
+                      <div class="active"></div>
+                      <p style="font-family: 'Times New Roman', Times, serif;">Times New Roman</p>
+                    </div>
+
+                    <div>
+                      <div class="active"></div>
+                      <p style="font-family: 'Lato', sans-serif;">Lato (Google Fonts)</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="option">
+                <p>Size</p>
+                <div class="select">
+                  <button class="current" id="fontSizesCurrent">
+                    <p>16px</p>
+                    <span class="material-symbols-rounded">
+                      expand_more
+                    </span>
+                  </button>
+                  <div class="options" id="fontSizes">
+                    <div>
+                      <div class="active"></div>
+                      <p>10px</p>
+                    </div>
+                    <div>
+                      <div class="active"></div>
+                      <p>12px</p>
+                    </div>
+                    <div>
+                      <div class="active"></div>
+                      <p>14px</p>
+                    </div>
+                    <div>
+                      <div class="active"></div>
+                      <p>16px</p>
+                    </div>
+                    <div>
+                      <div class="active"></div>
+                      <p>18px</p>
+                    </div>
+                    <div>
+                      <div class="active"></div>
+                      <p>20px</p>
+                    </div>
+                    <div>
+                      <div class="active"></div>
+                      <p>24px</p>
+                    </div>
+                    <div>
+                      <div class="active"></div>
+                      <p>28px</p>
+                    </div>
+                    <div>
+                      <div class="active"></div>
+                      <p>32px</p>
+                    </div>
+                    <div>
+                      <div class="active"></div>
+                      <p>38px</p>
+                    </div>
+                    <div>
+                      <div class="active"></div>
+                      <p>44px</p>
+                    </div>
+                    <div>
+                      <div class="active"></div>
+                      <p>52px</p>
+                    </div>
+                    <div>
+                      <div class="active"></div>
+                      <p>62px</p>
+                    </div>
+                    <div>
+                      <div class="active"></div>
+                      <p>74px</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="display" id="FontSample">
+                This is how your text will look like in the editor!
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="shown">
+              <div class="l">
+                <span class="material-symbols-rounded">
+                  label_important
+                  </span>
+                <div class="text">
+                  <p class="top">Priority</p>
+                  <p class="bottom">Select what to show first</p>
+                </div>
+              </div>
+              <div class="r">
+                <span class="material-symbols-rounded " id="open">
+                  chevron_right
+                </span>
+              </div>
+            </div>
+            <div class="hiddenOpt">
+              <div class="option" id="recentsFirst">
+                <div class="radio selected">
+                  <div class="color"></div>
+                </div>
+                <p>Recents</p>
+              </div>
+              <div class="option" id="settingsFirst">
+                <div class="radio">
+                  <div class="color"></div>
+                </div>
+                <p>Settings</p>
+              </div>
+              <div class="option" id="editorFirst">
+                <div class="radio">
+                  <div class="color"></div>
+                </div>
+                <p>Editor</p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="shown">
+              <div class="l">
+                <span class="material-symbols-rounded">
+                  manage_history
+                </span>
+                <div class="text">
+                  <p class="top">History Settings</p>
+                  <p class="bottom">Your History settings is currently</p>
+                </div>
+              </div>
+              <div class="r" id="recentsOpt">
+                <button>No</buttton>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="shown">
+              <div class="l">
+                <span class="material-symbols-rounded">
+                  open_in_browser
+                </span>
+                <div class="text">
+                  <p class="top">Make app default</p>
+                  <p class="bottom">Make this app default for your files</p>
+                </div>
+              </div>
+              <div class="r">
+                <button onclick="location.replace('ms-settings:defaultapps')">Open in Settings</buttton>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <p class="title">About this app</p>
+          <p style="margin-bottom: 0px;">Codingreef Notepad XI 1.0.0 (DEV)</p>
+          <p style="margin-top: 0px;">© 2022 Codingreef Team & GitHub Contributors</p>
+          <a href="">Project & Source Code</a>
+          <a href="">Notepad XI Website</a>
+          <a href="">Privacy & Terms and Conditions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./index.js"></script>
+</body>
+
+</html>

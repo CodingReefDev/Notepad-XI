@@ -1,0 +1,42 @@
+{
+  "name": "notepadxi",
+  "version": "1.0.0",
+  "description": "Notepad XI",
+  "main": "launcher.js",
+  "dependencies": {
+    "electron-log": "^4.4.7",
+    "electron-updater": "^5.0.1"
+  },
+  "devDependencies": {
+    "electron": "^18.2.4",
+    "electron-builder": "^23.0.3"
+  },
+  "scripts": {
+    "test": "electron-builder start --win --x64 --ia32",
+    "dist": "electron-builder --win --x64",
+    "start": "electron ."
+  },
+  "author": "Vigneshkumar 212, CodingReef Dev",
+  "license": "",
+  "build": {
+    "appId": "com.codingreefdev.notepadxi",
+    "productName": "Notepad XI",
+    "copyright": "Copyright © 2021 CodingReef Dev",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": false
+    },
+    "fileAssociations": [
+      {
+        "ext": "txt",
+        "name": "Text Document",
+        "role": "Editor"
+      }
+    ]
+  }
+}
